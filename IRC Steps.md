@@ -1,0 +1,126 @@
+# Setting up an IRC
+
+Starting this process we were given the choice to use either a laptop, or raspberry pi to host our IRC server. 
+Since my laptops are questionable at best, I chose to use a raspberry pi. So much more fun.
+
+**First:** we needed to grab a Raspberry Pi from the ETR bin, and download the OS, then save it on an SD card. 
+This was a painful and tedious process that had to rely on the school's network speed.
+
+
+**Second:** after the OS has successfully downloaded, we boot the Raspberry PI off the SD card that contains it's 
+OS. Now we have a fully fuctional Raspberry Pi. We get started with installing and setting up our Raspberry 
+Pi IRC Server we will first run an update and upgrade to ensure our Raspberry Pi is completely up to date.
+In the command console type:
+
+`sudo apt-get update`
+`sudo apt-get upgrade`
+
+
+**Third:** now that the Raspberry Pi now up to date we can proceed with installing the IRC Server software onto it.
+We are using a piece of software called Ircd-Hybrid. To install the software, type the following command into 
+the command console:
+
+`sudo apt-get install ircd-hybrid`
+
+
+**Fourth:** we need to set up a password and OPing for the server. In the command console type:
+
+`/usr/bin/mkpasswd password`
+
+
+**Fifth:** we will need to edit the ircd.conf file within the /etc/ircd-hybrid folder. Once this line is found, type
+in the following:
+
+`sudo nano /etc/ircd-hybrid/ircd.conf`
+
+
+**Sixth:** there are MANY various options. We need to find and edit these lines:
+
+in the **serverinfo {** block find
+`name = "hybrid8.debian.local";`
+
+replace this with whatever you are naming your IRC server.
+
+`name = "SplashingAround.irc";`
+
+next find
+`description = "ircd-hybrid 8.1-debian";`
+
+rename it
+
+`description = "Raspberry Pi IRC Server";`
+This sets the servers description and will be what people see when they connect to your server.
+
+next find
+`network_name = "debian";`
+`network_desc = "This is My Network";`
+
+replace these lines with your own names and descriptions
+
+`network_name = "SplashingAround";`
+`network_desc = "This is my Raspberry Pi IRC Network";`
+
+
+then find
+`max_clients = 512;`
+
+replace that with
+
+`max_clients = 128;`
+This defines the maximum amount of people that can be connected to the IRC Server.
+
+Then we neeed to find the **operator {** block
+Find and remove
+**"#" (The pound signs)**
+if you see **##** only remove the **first** one.
+
+next find
+‘name = "sheep";’
+
+replace this with whatever you want to name the OP's
+
+‘name = "op"; (I named mine "pimps"’
+
+then find
+‘user = "*@192.0.2.240/28";’
+
+replace this with
+
+‘user = "*@*";’
+This will change it so that anyone connecting to the server can run the oper command. If you want to restrict 
+this to local users only you can try using something like “*@192.168.*.*“.
+
+Then we find the password settings
+‘password = "xxxxxxxxxxxxx";’
+
+replace this with whatever password you created earlier for encryption
+‘password = "REPLACE WITH YOUR ENCRYPTED PASSWORD";’
+
+
+**Seventh:** save your configuration progress save and exit.
+**Ctrl X, then press Y**
+
+**Eighth:** you need to restart the server in order for your changes to take effect. In the command console type:
+
+‘sudo /etc/init.d/ircd-hybrid restart’
+
+
+**Ninth:** you need to have an IRC client on whatever computer you are working with, or whichever one you are using
+to test connection to your IRC server.
+
+I downloaded **Pidgin** from the Ubuntu App store. This was simply by typing in "Pidgin," and hitting download.
+
+**Tenth:** once inside your IRC client, select "Add Server". You will need to know your server's IP address, and 
+password.
+
+**AMAZING! You have now set up a server and can chat with people who actually use such programs!**
+
+
+
+**Eleventh:** After that you want to make sure other PCs can connect as well. Get on to another person's machine
+and repeat steps **Nine & Ten.**
+
+
+
+
+**Profit.**
