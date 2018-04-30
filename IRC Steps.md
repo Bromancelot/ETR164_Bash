@@ -86,7 +86,7 @@ replace this with
 
 user = "*@*";
 This will change it so that anyone connecting to the server can run the oper command. If you want to restrict 
-this to local users only you can try using something like “*@192.168.*.*“.
+this to local users only you can try using something like â€œ*@192.168.*.*â€œ.
 
 Then we find the password settings
 password = "xxxxxxxxxxxxx";
@@ -116,9 +116,9 @@ AMAZING! You have now set up a server and can chat with people who actually use 
 
 
 Eleventh: After that you want to make sure other PCs can connect as well. Get on to another person's machine\
-and repeat steps Nine & Ten.
 
 
 
 
-Profit.
+
+
