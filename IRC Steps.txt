@@ -1,5 +1,5 @@
-Starting this process we were given the choice to use either a laptop, or raspberry pi to host our IRC server. 
-Since my laptops are questionable at best, I chose to use a raspberry pi. So much more fun.
+Starti
+
 
 First: we needed to grab a Raspberry Pi from the ETR bin, and download the OS, then save it on an SD card. 
 This was a painful and tedious process that had to rely on the school's network speed.
