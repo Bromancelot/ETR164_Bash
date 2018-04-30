@@ -75,26 +75,26 @@ Find and remove
 if you see **##** only remove the **first** one.
 
 next find
-‘name = "sheep";’
+`name = "sheep";`
 
 replace this with whatever you want to name the OP's
 
-‘name = "op"; (I named mine "pimps"’
+`name = "op"; (I named mine "pimps"`
 
 then find
-‘user = "*@192.0.2.240/28";’
+`user = "*@192.0.2.240/28";`
 
 replace this with
 
-‘user = "*@*";’
+`user = "*@*";`
 This will change it so that anyone connecting to the server can run the oper command. If you want to restrict 
 this to local users only you can try using something like “*@192.168.*.*“.
 
 Then we find the password settings
-‘password = "xxxxxxxxxxxxx";’
+`password = "xxxxxxxxxxxxx";`
 
 replace this with whatever password you created earlier for encryption
-‘password = "REPLACE WITH YOUR ENCRYPTED PASSWORD";’
+`password = "REPLACE WITH YOUR ENCRYPTED PASSWORD";`
 
 
 **Seventh:** save your configuration progress save and exit.
@@ -102,7 +102,7 @@ replace this with whatever password you created earlier for encryption
 
 **Eighth:** you need to restart the server in order for your changes to take effect. In the command console type:
 
-‘sudo /etc/init.d/ircd-hybrid restart’
+`sudo /etc/init.d/ircd-hybrid restart`
 
 
 **Ninth:** you need to have an IRC client on whatever computer you are working with, or whichever one you are using
